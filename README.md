@@ -1,30 +1,52 @@
-# +Sorriso App
+# 😄 Mais Sorriso
 
-Projeto frontend simples para gerenciamento de consultas e prontuários.
-
-Como executar localmente
-- Abra o arquivo `menu.html` (ou `index.html`) em um navegador.
-
-Preparar e publicar no GitHub
-1. Instale Git e GitHub CLI (GUI).
-2. No PowerShell, configure seu usuário Git:
-
-   git config --global user.name "Seu Nome"
-   git config --global user.email "seu@email.com"
-
-3. Inicialize e envie para o GitHub (após autenticar com `gh auth login`):
-
-   git init
-   git branch -M main
-   git add .
-   git commit -m "Initial commit"
-   gh repo create sorriso-app --public --source=. --remote=origin --push --confirm
-
-4. Ative o GitHub Pages nas configurações do repositório (branch `main` / root) para publicar o site.
-
-Observações
-- Se quiser autenticação e banco de dados para funcionalidade multiusuário, posso integrar Firebase ou Supabase.
-- Remova bordas de depuração em `menu.css` se desejar antes do push final.
+O **Mais Sorriso** é um projeto pensado para promover bem-estar, positividade e qualidade de vida, colocando o sorriso como parte essencial do dia a dia. A iniciativa pode ser utilizada em contextos educacionais, sociais, de saúde ou como base para aplicações e ações comunitárias.
 
 ---
-Feito com ❤️ — me diga quando estiver pronto para eu criar o repositório remoto com `gh` ou te passar os comandos para rodar localmente.
+
+## 📌 Objetivo
+
+O objetivo principal do **Mais Sorriso** é:
+
+* Incentivar hábitos positivos e saudáveis;
+* Promover o bem-estar emocional;
+* Criar um ambiente mais leve, humano e acolhedor;
+* Estimular atitudes que impactem positivamente a vida das pessoas.
+
+---
+
+## 🧩 Funcionalidades / Proposta
+
+Dependendo da implementação, o projeto pode incluir:
+
+* Conteúdos motivacionais e educativos;
+* Campanhas de conscientização;
+* Ações sociais ou educacionais;
+* Aplicações digitais voltadas ao bem-estar;
+* Materiais de apoio (textos, atividades, desafios positivos).
+
+---
+
+## 🛠️ Tecnologias (se aplicável)
+
+Caso o **Mais Sorriso** seja um projeto de software, ele pode utilizar:
+
+* Linguagens: `HTML`, `CSS`, `JavaScript`, `Python`, entre outras;
+* Frameworks e bibliotecas conforme a necessidade do projeto;
+* Banco de dados para armazenamento de informações;
+* Ferramentas de versionamento como `Git` e `GitHub`.
+*
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT** (ou outra, conforme definido). Consulte o arquivo `LICENSE` para mais informações.
+
+---
+
+## 💙 Mensagem final
+
+> Um sorriso pode não resolver todos os problemas, mas pode tornar o caminho mais leve.
+
+**Mais Sorriso** — espalhando positividade todos os dias 😄
