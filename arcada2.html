@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcada Dentária</title>
+    <link rel="stylesheet" href="arcada.css">
+    <link rel="stylesheet" href="arcada2.css">
+</head>
+<body> 
+    <div class="header">
+        <button class="back-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <h1>Arcada dentária (adulta)</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="consult-header">Consulta com Pessoa 1</div>
+        
+        <div class="content">
+            <div class="patient-info">
+                <div class="patient-name">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <span>Pessoa 1</span>
+                </div>
+                <span class="appointment-time">17/03 - 11h</span>
+            </div>
+
+            <div id="arcada-container">
+                <div class="tooth-diagram">
+                   
+                    
+                  <img src="img/Sem nome (1080 x 1080 px) (950 x 1080 px) (1).png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+]
+            <div id="diagnostics-content" class="diagnostics-content">
+                <textarea placeholder="Insira os diagnósticos aqui..."></textarea>
+            </div>
+
+            <button class="finish-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                Finalizar prontuário
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+    
+              <script>
+                              // script.js
+const toothNames = {
+    11: "Incisivo Central Superior Direito",
+    12: "Incisivo Lateral Superior Direito",
+    13: "Canino Superior Direito",
+    14: "Primeiro Pré-Molar Superior Direito",
+    15: "Segundo Pré-Molar Superior Direito",
+    16: "Primeiro Molar Superior Direito",
+    17: "Segundo Molar Superior Direito",
+    18: "Terceiro Molar Superior Direito",
+    21: "Incisivo Central Superior Esquerdo",
+    22: "Incisivo Lateral Superior Esquerdo",
+    23: "Canino Superior Esquerdo",
+    24: "Primeiro Pré-Molar Superior Esquerdo",
+    25: "Segundo Pré-Molar Superior Esquerdo",
+    26: "Primeiro Molar Superior Esquerdo",
+    27: "Segundo Molar Superior Esquerdo",
+    28: "Terceiro Molar Superior Esquerdo",
+    31: "Incisivo Central Inferior Esquerdo",
+    32: "Incisivo Lateral Inferior Esquerdo",
+    33: "Canino Inferior Esquerdo",
+    34: "Primeiro Pré-Molar Inferior Esquerdo",
+    35: "Segundo Pré-Molar Inferior Esquerdo",
+    36: "Primeiro Molar Inferior Esquerdo",
+    37: "Segundo Molar Inferior Esquerdo",
+    38: "Terceiro Molar Inferior Esquerdo",
+    41: "Incisivo Central Inferior Direito",
+    42: "Incisivo Lateral Inferior Direito",
+    43: "Canino Inferior Direito",
+    44: "Primeiro Pré-Molar Inferior Direito",
+    45: "Segundo Pré-Molar Inferior Direito",
+    46: "Primeiro Molar Inferior Direito",
+    47: "Segundo Molar Inferior Direito",
+    48: "Terceiro Molar Inferior Direito"
+};
+
+let selectedTooth = null;
+const arcadaContainer = document.getElementById('arcada-container');
+const diagnosticsButton = document.getElementById('diagnostics-button');
+const diagnosticsContent = document.getElementById('diagnostics-content');
+const diagnosticsArrow = document.getElementById('diagnostics-arrow');
+
+function createToothElement(number) {
+    const tooth = document.createElement('div');
+    tooth.className = 'tooth';
+    tooth.textContent = number;
+    tooth.addEventListener('click', () => selectTooth(number));
+    return tooth;
+}
+
+function selectTooth(number) {
+    selectedTooth = number;
+    
+    const treatmentsHTML = `
+        <div class="treatments">
+            <h3>Tratamentos</h3>
+            <div class="treatments-grid">
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Limpeza / Profilaxia</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Restauração</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Tratamento de canal</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Extração dentária</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Clareamento dental</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Aplicação de flúor</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Periodontia</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Ajuste oclusal</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Prótese dentária</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Aparelho ortod.</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Tratam. de cárie</label></div>
+                <div class="treatment-item"><input type="radio" name="treatment"><label>Remoção tártaro</label></div>
+            </div>
+            <div class="other-treatment">
+                <label>Outro:</label>
+                <input type="text" placeholder="Especifique outro tratamento">
+            </div>
+        </div>
+    `;
+    
+    arcadaContainer.innerHTML = `
+        <div class="selected-tooth-info">
+            <h3>Dente Selecionado:</h3>
+            <p>${toothNames[number] || 'Dente ' + number}</p>
+            <button class="back-to-arcade">Voltar à arcada</button>
+        </div>
+        ${treatmentsHTML}
+    `;
+    
+    // Adicionar evento ao botão de voltar
+    const backButton = document.querySelector('.back-to-arcade');
+    if (backButton) {
+        backButton.addEventListener('click', showArcada);
+    }
+}
+
+
+    
+    // Recriar os dentes
+    const arcadaSuperior = document.getElementById('arcada-superior');
+    const arcadaInferior = document.getElementById('arcada-inferior');
+    
+    const dentesSuperiores = [18, 17, 16, 15, 14, 13, 12, 11, 21, 22, 23, 24, 25, 26, 27, 28];
+    dentesSuperiores.forEach(num => {
+        arcadaSuperior.appendChild(createToothElement(num));
+    });
+    
+    const dentesInferiores = [48, 47, 46, 45, 44, 43, 42, 41, 31, 32, 33, 34, 35, 36, 37, 38];
+    dentesInferiores.forEach(num => {
+        arcadaInferior.appendChild(createToothElement(num));
+    });
+
+
+function toggleDiagnostics() {
+    if (diagnosticsContent.style.display === 'none' || diagnosticsContent.style.display === '') {
+        diagnosticsContent.style.display = 'block';
+        diagnosticsArrow.classList.add('rotated');
+    } else {
+        diagnosticsContent.style.display = 'none';
+        diagnosticsArrow.classList.remove('rotated');
+    }
+}
+
+// Adicionar eventos quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar arcada
+    showArcada();
+    
+    // Adicionar evento ao botão de diagnósticos
+    if (diagnosticsButton) {
+        diagnosticsButton.addEventListener('click', toggleDiagnostics);
+    }
+});
+
+
+              </script>
+                        </body>
+                        </html>
+                    

@@ -1,0 +1,584 @@
+
+                body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+    
+                /* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.header {
+    background: #3b82f6;
+    color: white;
+    padding: 20px;
+    border-radius: 0.75rem 0.75rem 0 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    margin-right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.consult-header {
+    background: #3b82f6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    padding: 25px;
+}
+
+.patient-info {
+    background: #3b82f6;
+    color: white;
+    padding: 16px;
+    border-radius: 0.75rem;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patient-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.patient-name svg {
+    width: 24px;
+    height: 24px;
+}
+
+.appointment-time {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.tooth-diagram {
+    background: white;
+    padding: 30px;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    margin-bottom: 30px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible; /* evitar recorte do conteúdo */
+}
+
+/* Garantir que a imagem seja reduzida quando necessário e NUNCA cortada */
+.tooth-diagram img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 60vh; /* limita altura para caber na viewport sem cortar */
+    display: block;
+    margin: 0 auto;
+    object-fit: contain; /* garante que toda a imagem fique visível */
+    border-radius: 0.5rem;
+    box-shadow: none;
+} 
+
+@media (max-width: 480px) {
+    .main-container {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        overflow: visible; /* evita que o container corte a imagem em mobile */
+        border-radius: 0.5rem;
+    }
+    .tooth-diagram {
+        padding: 4px; /* reduzir ainda mais padding para ganhar espaço */
+        min-height: 0;
+        justify-content: center;
+    }
+    .tooth-diagram img {
+        max-height: 95vh; /* maior em mobile */
+        max-width: 100%;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+}  
+
+/* Tablet (iPad) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .main-container {
+        max-width: 100%;
+        width: 100%;
+        overflow: visible; /* evita corte em tablets */
+    }
+    .tooth-diagram {
+        padding: 8px; /* mais compacto para dar espaço à imagem */
+        justify-content: center;
+    }
+    .tooth-diagram img {
+        max-height: 95vh; /* maior em tablets */
+        max-width: 100%;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+}  
+
+.arcade {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.teeth-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 700px;
+}
+
+.tooth {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50%;
+    background: #e5e7eb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tooth:hover {
+    background: #dbeafe;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tooth.selected {
+    background: #3b82f6;
+    color: white;
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+}
+
+.central-line {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.central-line div {
+    width: 6px;
+    height: 80px;
+    background: #d1d5db;
+    border-radius: 3px;
+}
+
+.selected-tooth-info {
+    background: #dbeafe;
+    padding: 25px;
+    border-radius: 1rem;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.selected-tooth-info h3 {
+    font-weight: bold;
+    color: #1e40af;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.selected-tooth-info p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.back-to-arcade {
+    margin-top: 15px;
+    padding: 12px 24px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.back-to-arcade:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.treatments {
+    background: #2563eb;
+    color: white;
+    padding: 25px;
+    border-radius: 1rem;
+    margin-top: 30px;
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.treatments h3 {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.treatment-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    transition: background 0.2s;
+}
+
+.treatment-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.treatment-item input {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+}
+
+.treatment-item label {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.other-treatment {
+    margin-top: 20px;
+}
+
+.other-treatment label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.other-treatment input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 0.5rem;
+    background: white;
+    color: #1f2937;
+    border: 2px solid #93c5fd;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.other-treatment input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.diagnostics-button {
+    width: 100%;
+    background: #3b82f6;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.diagnostics-button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.diagnostics-content {
+    margin-top: 20px;
+    padding: 25px;
+    background: #dbeafe;
+    border-radius: 1rem;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.diagnostics-content textarea {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #93c5fd;
+    border-radius: 0.5rem;
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: border-color 0.2s;
+}
+
+.diagnostics-content textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.finish-button {
+    width: 100%;
+    background: #3b82f6;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.finish-button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.finish-button svg {
+    margin-right: 12px;
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .header {
+        padding: 16px;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+    
+    .header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .back-button {
+        margin-right: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .main-container {
+        border-radius: 1rem;
+        margin-top: 15px;
+    }
+    
+    .consult-header {
+        padding: 16px;
+        font-size: 1.3rem;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .patient-info {
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .appointment-time {
+        font-size: 1rem;
+    }
+    
+    .tooth-diagram {
+        padding: 20px;
+        margin-bottom: 25px;
+        min-height: 250px;
+    }
+    
+    .tooth {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    .central-line div {
+        height: 60px;
+    }
+    
+    .selected-tooth-info {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .selected-tooth-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .selected-tooth-info p {
+        font-size: 1.1rem;
+    }
+    
+    .back-to-arcade {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    .treatments {
+        padding: 20px;
+        margin-top: 25px;
+    }
+    
+    .treatments h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .treatments-grid {
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .treatment-item {
+        padding: 8px;
+    }
+    
+    .treatment-item label {
+        font-size: 0.95rem;
+    }
+    
+    .other-treatment input {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    .diagnostics-button, .finish-button {
+        padding: 14px;
+        font-size: 1.1rem;
+        margin-top: 25px;
+    }
+    
+    .diagnostics-content {
+        padding: 20px;
+        margin-top: 15px;
+    }
+    
+    .diagnostics-content textarea {
+        padding: 14px;
+        min-height: 100px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tooth {
+        width: 35px;
+        height: 35px;
+        font-size: 10px;
+    }
+    
+    .teeth-row {
+        gap: 4px;
+    }
+    
+    .central-line div {
+        height: 50px;
+    }
+    
+    .treatments-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .patient-name, .appointment-time {
+        font-size: 0.9rem;
+    }
+    
+    .header h1 {
+        font-size: 1.1rem;
+    }
+}
+
+

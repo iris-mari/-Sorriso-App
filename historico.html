@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SorrisoTech - Histórico de Tratamentos</title>
+    <link rel="stylesheet" href="historico.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left-group">
+                <button class="back-button">
+                    <svg class="back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <div class="user-greeting">
+                    <svg class="user-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    <span class="greeting-text">Olá, Marcianne</span>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar tratamentos...">
+                <button class="search-button">
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
+                <button class="filter-button">
+                    <svg class="filter-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00.293.707H15a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00.293.707H9a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l6.414-6.414A1 1 0 0015 14H9a1 1 0 01-1-1V8.586a1 1 0 01.293-.707l6.414-6.414A1 1 0 0015 1H4a1 1 0 01-1-1V4z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="timeline-container">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="date">
+                                    <div class="month">JAN</div>
+                                    <div class="day">07</div>
+                                </div>
+                                <div class="card-info">
+                                    <div class="info-row">
+                                        <span class="label">Diagnóstico</span>
+                                        <span class="value">Cárries</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="label">Tratamento</span>
+                                        <span class="value">Restauração</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="label">Dentista</span>
+                                        <span class="value">Dr.Sofia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-status">
+                                <svg class="status-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="status-text">Finalizado!</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="date">
+                                    <div class="month">JUN</div>
+                                    <div class="day">23</div>
+                                </div>
+                                <div class="card-info">
+                                    <div class="info-row">
+                                        <span class="label">Diagnóstico</span>
+                                        <span class="value">Fratura</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="label">Tratamento</span>
+                                        <span class="value">Prótese</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="label">Dentista</span>
+                                        <span class="value">Dr.Gerônimo</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-status">
+                                <svg class="status-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="status-text">Finalizado!</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="date">
+                                    <div class="month">NOV</div>
+                                    <div class="day">05</div>
+                                </div>
+                                <div class="card-info">
+                                    <div class="info-row">
+                                        <span class="label">Diagnóstico</span>
+                                        <span class="value">Manchas</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="label">Tratamento</span>
+                                        <span class="value">Limpeza</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="label">Dentista</span>
+                                        <span class="value">Dra.Irina</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-status">
+                                <svg class="status-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="status-text pending">Pendente!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="historico.js"></script>
+</body>
+</html>

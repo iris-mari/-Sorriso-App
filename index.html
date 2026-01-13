@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+sorriso - Cuidando do que mais importa</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+              <img class="header-img" src="mg/dentinho.png" alt="">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                </svg>
+                <span class="logo-text">SorrisoTech</span>
+            </div>
+            <div class="nav-tabs">
+                <button class="tab-button active" data-tab="login">Login</button>
+                <button class="tab-button" data-tab="signup">Cadastro</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Logo -->
+            <div class="logo-container">
+                <div class="logo-circle">
+                 <img src="img/+sorriso.png" alt=""> 
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.157-2.132 12.083 12.083 0 01.665-6.479L12 14z"></path>
+                  
+                </div>
+                <div class="logo-text-container">
+                    <h1 class="brand-name">+sorriso</h1>
+                    <p class="brand-tagline">Cuidando do que mais importa</p>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-container">
+                <form id="loginForm" class="form active" novalidate>
+                    <div class="form-header">
+                        <h2 class="form-title">Acesse sua conta para continuar</h2>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" class="form-input" placeholder="Seu e-mail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" id="password" class="form-input" placeholder="Sua senha" required>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <a href="menu.html"></a>Entrar</button>
+
+                    <div class="form-footer">
+                        <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+                        <p class="switch-text">
+                            Ainda não tem uma conta? 
+                            <button type="button" class="switch-button" data-target="signup">Cadastre-se agora.</button>
+                        </p>
+                    </div>
+                </form>
+
+                <form id="signupForm" class="form" novalidate>
+                    <div class="form-header">
+                        <h2 class="form-title">Crie sua conta</h2>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail" class="form-label">E-mail</label>
+                        <input type="email" id="signupEmail" class="form-input" placeholder="Seu e-mail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword" class="form-label">Senha</label>
+                        <input type="password" id="signupPassword" class="form-input" placeholder="Sua senha" required>
+                    </div>
+
+                    <button type="submit" class="submit-button">Criar Conta</button>
+
+                    <div class="form-footer">
+                        <p class="switch-text">
+                            Já tem uma conta? 
+                            <button type="button" class="switch-button" data-target="login">Faça login.</button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">Termos de uso | Política de privacidade</p>
+        </footer>
+    </div>
+
+
+    <script src="login.js"></script>
+</body>
+</html>
+
